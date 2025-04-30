@@ -1,0 +1,82 @@
+* {
+    --soft-gray: #f8f2f9;
+    --warm-border: #e0e0e0;
+    --gentle-shadow: rgba(0, 0, 0, 1);
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    background: var(--soft-gray);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  #app {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--gentle-shadow);
+  }
+  
+  h1 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--warm-border);
+  }
+  
+  button, input[type="submit"] {
+    background: white;
+    border: 1px solid var(--warm-border);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  button:hover {
+    background: #f8f8f8;
+    transform: translateY(-1px);
+  }
+  
+  input[type="text"] {
+    padding: 0.7rem;
+    border: 1px solid var(--warm-border);
+    border-radius: 4px;
+    margin: 0.5rem 0;
+  }
+  
+  form {
+    margin: 1.5rem 0;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 1.5rem 0;
+  }
+  
+  li {
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background: #fcfcfc;
+    border-radius: 4px;
+  }
+  
+  fieldset {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .graffiti-discover {
+    margin-top: 1.5rem;
+  }
+  
+  li:not(:last-child) {
+    border-bottom: 1px solid var(--warm-border);
+  }
+  button:disabled, input:disabled {
+    opacity: 0.5;
+    background: #fafafa;
+  }
