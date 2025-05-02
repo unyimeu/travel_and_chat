@@ -210,6 +210,7 @@ createApp({
       const session = this.$graffitiSession.value;
       const newProfile = {
         ...this.profileDraft,
+        generator: "https://unyimeu.github.io/travel_and_chat/",
         describes: session.actor,
         published: Date.now(),
       };
@@ -217,7 +218,7 @@ createApp({
       await this.$graffiti.put(
         {
           value: newProfile,
-          channels: [session.actor],
+          channels: ["designftw-2025-studio2", session.actor],
         },
         session
       );
@@ -264,7 +265,8 @@ createApp({
 })
   .component("reaction-button", ReactionButton)
   .use(GraffitiPlugin, {
-    graffiti: new GraffitiLocal(),
+    //graffiti: new GraffitiLocal(),
+    graffiti: new GraffitiRemote(),
   })
   .mount("#app");
 
