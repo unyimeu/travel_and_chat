@@ -11,7 +11,7 @@
           "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
           "@graffiti-garden/implementation-remote": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-remote@0.6.2/dist/browser/index.js",
           "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
-      }
+        }
       }
     </script>
     <link rel="stylesheet" href="style.css" />
@@ -80,10 +80,10 @@
             Cancel
           </button>
 
-          <button class="logic" @click="showProfileEditor = false">Save</button>
+          <button class="logic" @click="saveProfile">Save</button>
         </div>
 
-        <!-- Group Chat Section -->
+
         <div class="header">
           <h2>Group Chats</h2>
           <div class="create-group-wrapper">
@@ -113,7 +113,7 @@
         <graffiti-discover
           v-slot="{ objects: groupChatObjects }"
           :channels="['designftw']"
-          :schema="{
+          <!--</graffiti-discover>:schema="{
             properties: {
               value: {
                 required: ['activity', 'object'],
@@ -130,7 +130,7 @@
                 }
               }
             }
-          }"
+          }"-->
         >
           <ul class="group-chat-list">
             <li

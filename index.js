@@ -213,16 +213,17 @@ createApp({
         ...this.profileDraft,
         generator: "https://unyimeu.github.io/travel_and_chat/",
         describes: session.actor,
+        name: "My Name",
         published: Date.now(),
       };
 
-      await this.$graffiti.put(
-        {
-          value: newProfile,
-          channels: ["designftw-2025-studio2", session.actor],
-        },
-        session
-      );
+      const profileObject = {
+        value: newProfile,
+        channels: ["designftw-2025-studio2", session.actor],
+      };
+      console.log("Saving profile", profileObject);
+
+      await this.$graffiti.put(profileObject, session);
 
       this.profile = { ...this.profileDraft };
       this.showProfileEditor = false;
