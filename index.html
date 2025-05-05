@@ -83,7 +83,6 @@
           <button class="logic" @click="saveProfile">Save</button>
         </div>
 
-
         <div class="header">
           <h2>Group Chats</h2>
           <div class="create-group-wrapper">
@@ -113,7 +112,7 @@
         <graffiti-discover
           v-slot="{ objects: groupChatObjects }"
           :channels="['designftw']"
-          <!--</graffiti-discover>:schema="{
+          :schema="{
             properties: {
               value: {
                 required: ['activity', 'object'],
@@ -130,7 +129,7 @@
                 }
               }
             }
-          }"-->
+          }"
         >
           <ul class="group-chat-list">
             <li
