@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Choose an Action | DesignFTW</title>
+
+  <!-- reuse your importmap for Vue & Graffiti -->
+  <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
+      "@graffiti-garden/implementation-remote": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-remote@0.6.2/dist/browser/index.js",
+      "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
+    }
+  }
+  </script>
+
+  <!-- link your main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* quick inline styles just for this page */
+    #intermediateApp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #e6e6e6;
+      padding: 20px;
+    }
+    .menu-card {
+      background-color: #005f75;
+      padding: 60px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 90vw;
+      max-width: 600px;
+    }
+    .menu-card h2 {
+      color: #fff;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+    .menu-card button {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px 0;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #333;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .menu-card button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div id="intermediateApp">
+    <div class="menu-card">
+      <h2>Start Exploring</h2>
+      <!-- only chats for now -->
+      <button @click="openChats">Open Chats</button>
+      <!-- future buttons:
+      <button @click="openMaps">Open Maps</button>
+      <button @click="openFriends">Friends</button>
+      … -->
+    </div>
+  </div>
+
+  <script type="module" src="intermediate.js"></script>
+</body>
+</html>

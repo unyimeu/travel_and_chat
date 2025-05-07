@@ -273,8 +273,11 @@ createApp({
 })
   .component("reaction-button", ReactionButton)
   .use(GraffitiPlugin, {
-    //graffiti: new GraffitiLocal(),
-    graffiti: new GraffitiRemote(),
+    graffiti: new GraffitiLocal(),
+    /*graffiti: new GraffitiRemote({
+      clientId: "Ov23liZ1f8sZP6bLogUU",
+      // you can also set redirectUri if needed; by default it uses window.location
+    }),*/
   })
   .mount("#app");
 

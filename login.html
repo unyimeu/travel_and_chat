@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Login | DesignFTW Chat</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Login | DesignFTW Chat</title>
 
-    <!-- link your existing stylesheet (with the added login styles at the bottom) -->
-    <link rel="stylesheet" href="style.css" />
+  <!-- your stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- importmap for Vue & Graffiti (unchanged) -->
-    <script type="importmap">
-      {
-        "imports": {
-          "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
-          "@graffiti-garden/implementation-remote": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-remote@0.6.2/dist/browser/index.js",
-          "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <div id="loginApp" class="login-page">
-      <div class="login-card">
-        <!-- your logo -->
-        <img
-          src="images/ChatGPT_Image_Apr_30__2025__08_01_11_PM-removebg-preview.png"
-          alt="Logo"
-          class="login-logo"
-        />
-
-        <!-- heading -->
-        <h1>WELCOME BACK</h1>
-
-        <!-- placeholders only; no JS yet -->
-        <div class="login-form">
-          <div class="form-group">
-            <input type="text" placeholder="insert username" />
-          </div>
-          <div class="form-group">
-            <input type="password" placeholder="insert password" />
-          </div>
+  <!-- importmap now includes implementation-local -->
+  <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
+      "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
+      "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="loginApp" class="login-page">
+    <div class="login-card">
+      <img src="images/ChatGPT_Image_Apr_30__2025__08_01_11_PM-removebg-preview.png" alt="Logo" class="login-logo" />
+      <h1>WELCOME BACK</h1>
+      <div class="login-form">
+        <div class="form-group">
+          <input type="text" placeholder="insert username" />
         </div>
-
-        <!-- your existing Graffiti login trigger -->
-        <button
-          class="logic login-button"
-          :disabled="loading"
-          @click="startLogin"
-        >
-          {{ loading ? "Logging in…" : "LOGIN" }}
-        </button>
+        <div class="form-group">
+          <input type="password" placeholder="insert password" />
+        </div>
       </div>
+      <button class="logic login-button" :disabled="loading" @click="startLogin">
+        {{ loading ? "Logging in…" : "LOGIN" }}
+      </button>
     </div>
+  </div>
 
-    <script type="module" src="login.js"></script>
-  </body>
+  <script type="module" src="login.js"></script>
+</body>
 </html>

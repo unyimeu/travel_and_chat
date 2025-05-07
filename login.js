@@ -1,46 +1,23 @@
-// login.js
 import { createApp } from "vue";
-import { GraffitiRemote } from "@graffiti-garden/implementation-remote";
+import { GraffitiLocal } from "@graffiti-garden/implementation-local";
 import { GraffitiPlugin } from "@graffiti-garden/wrapper-vue";
 
-// 1) Instantiate your Graffiti backend just once
-const graffiti = new GraffitiRemote();
+// switch to the local implementation
+const graffiti = new GraffitiLocal();
 
 createApp({
   data() {
-    return {
-      loading: false,
-    };
+    return { loading: false };
   },
   methods: {
     async startLogin() {
       this.loading = true;
-      // Fire off Graffiti's built-in login flow.
-      // After the OAuth dance completes, Graffiti will rehydrate session
-      // and update this.$graffitiSession.value.
-      await this.$graffiti.login();
-      // We don’t redirect here—you’ll be returned to this page
-      // and the watcher below will catch the session change.
-    },
-  },
-  mounted() {
-    // 2) If you land here already logged in, go straight to chat:
-    if (this.$graffitiSession.value) {
-      window.location.href = "index.html";
-      return;
+      // use local Graffiti login
+      await graffiti.login();
+      // on success, go to the intermediate page
+      window.location.href = "intermediate.html";
     }
-
-    // 3) Otherwise, watch for session.value to flip truthy
-    const stopWatching = this.$watch(
-      () => this.$graffitiSession.value,
-      (newVal) => {
-        if (newVal) {
-          stopWatching();              // stop the watcher
-          window.location.href = "index.html";
-        }
-      }
-    );
-  },
+  }
 })
   .use(GraffitiPlugin, { graffiti })
   .mount("#loginApp");
