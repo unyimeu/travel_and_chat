@@ -356,3 +356,194 @@ textarea, .editText, .newGroupChat, input[type="text"] {
 }
 
 
+/* =============================
+   Login Page — Modern Teal Card
+   ============================= */
+
+/* full-screen grey background & center the card */
+.login-page {
+  background-color: #e6e6e6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  background-color: #005f75;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  width: 90vw;                 /* 90% of viewport width */
+  max-width: 1200px;           /* cap on very wide screens */
+  margin: 40px auto;           /* 40px top/bottom, centered */
+  padding: 60px 30px;
+  
+  /* make it fill the available height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* center contents vertically */
+  min-height: calc(100vh - 80px);  /* total height minus margins */
+}
+
+/* Logo circle */
+.login-logo {
+  width: 200px;
+  margin: 0 auto 24px;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.login-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Heading */
+.login-card h1 {
+  color: #fff;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* Form group & labels */
+.login-form .form-group {
+  margin-bottom: 24px;
+  text-align: left;
+}
+.login-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+}
+
+/* Inputs */
+.login-form input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+.login-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Placeholder color */
+.login-form input::placeholder {
+  color: #888;
+}
+
+/* LOGIN button */
+.login-button {
+  display: inline-block;
+  background-color: #333; 
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.login-button:hover {
+  background-color: #444;
+}
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/* Optional: subtle animated background blob */
+.login-card::before {
+  content: "";
+  position: absolute;
+  top: -40px; right: -60px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: drift 8s infinite ease-in-out alternate;
+}
+@keyframes drift {
+  to { transform: translate(-20px,20px) rotate(45deg); }
+}
+/* ————————————————
+   Tweaked Login Page Styles
+   ———————————————— */
+
+   .login-card {
+    /* keep full-screen teal bg but center content */
+    width: 90vw;
+    max-width: 1200px;
+    min-height: calc(100vh - 40px);
+    margin: 20px auto;
+    padding: 80px 40px;
+    background-color: #005f75;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    text-align: center;          /* center heading/logo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* center the form+button */
+    justify-content: flex-start; /* leave space at bottom rather than forced center */
+    position: relative;
+  }
+  
+  /* constrain the form to a fixed width in the middle */
+  .login-form {
+    width: 100%;
+    max-width: 500px;           /* choose 400–600px to taste */
+    margin: 0 auto 40px;        /* center & give bottom gap */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;           /* labels/input text align left */
+  }
+  
+  /* keep labels above inputs */
+  .login-form label {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    margin-bottom: 6px;
+  }
+  
+  /* inputs fill that central form */
+  .login-form input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #fff;
+  }
+  
+  /* modest, centered LOGIN button */
+  .login-button {
+    display: inline-block;
+    margin: 0 auto;            /* center in the card */
+    background-color: #333;
+    color: #fff;
+    padding: 14px 32px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: background 0.2s ease, transform 0.1s ease;
+  }
+  .login-button:hover {
+    background-color: #444;
+  }
+  .login-button:active {
+    transform: scale(0.98);
+  }
+  

@@ -99,6 +99,12 @@ createApp({
         this.loggedIn = true;
       });
     },
+    async handleLogout() {
+      // 1) call Graffiti’s logout
+      await this.$graffiti.logout(this.$graffitiSession.value);
+      // 2) then send them back to the login page
+      window.location.href = "login.html";
+    },
     toggleMessageMenu(message) {
       this.activeMenu = this.activeMenu === message ? null : message;
     },
