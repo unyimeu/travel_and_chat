@@ -5,25 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Choose an Action | DesignFTW</title>
 
-  <!-- reuse your importmap for Vue & Graffiti -->
+  <!-- only need Vue here -->
   <script type="importmap">
   {
     "imports": {
-      "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
-      "@graffiti-garden/implementation-remote": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-remote@0.6.2/dist/browser/index.js",
-      "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
+      "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js"
     }
   }
   </script>
 
-  <!-- link your main stylesheet -->
+  <!-- your existing styles -->
   <link rel="stylesheet" href="style.css" />
-
   <style>
-    /* quick inline styles just for this page */
+    /* inline tweaks just for intermediate page */
     #intermediateApp {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
@@ -66,12 +62,10 @@
   <div id="intermediateApp">
     <div class="menu-card">
       <h2>Start Exploring</h2>
-      <!-- only chats for now -->
       <button @click="openChats">Open Chats</button>
       <!-- future buttons:
       <button @click="openMaps">Open Maps</button>
-      <button @click="openFriends">Friends</button>
-      … -->
+      -->
     </div>
   </div>
 
