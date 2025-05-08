@@ -547,3 +547,28 @@ textarea, .editText, .newGroupChat, input[type="text"] {
     transform: scale(0.98);
   }
   
+  /* just centering */
+  #intermediateApp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #e6e6e6;
+    padding: 20px;
+  }
+  .menu-card {
+    background: #005f75;
+    padding: 60px 40px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    width: 90vw; max-width: 600px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .menu-card h2 { margin-bottom: 30px; font-size:1.8rem; }
+  .menu-card button {
+    width:100%; padding:14px 0; margin:12px 0;
+    background:#333; border:none; border-radius:6px;
+    color:#fff; cursor:pointer; transition:background 0.2s;
+  }
+  .menu-card button:hover { background:#444; }
