@@ -2,6 +2,9 @@ import { createApp } from "vue";
 import { GraffitiLocal } from "@graffiti-garden/implementation-local";
 import { GraffitiRemote } from "@graffiti-garden/implementation-remote";
 import { GraffitiPlugin } from "@graffiti-garden/wrapper-vue";
+import Dashboard from "./components/Dashboard.js";
+
+
 
 const ReactionButton = {
   props: ["messageUrl"],
@@ -272,6 +275,7 @@ createApp({
   },
 })
   .component("reaction-button", ReactionButton)
+  .component("Dashboard", Dashboard)
   .use(GraffitiPlugin, {
     graffiti: new GraffitiLocal(),
     /*graffiti: new GraffitiRemote({

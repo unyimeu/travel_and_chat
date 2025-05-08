@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DesignFTW Chatroom</title>
+    <title>Travel and Chatroom</title>
     <script type="importmap">
       {
         "imports": {
@@ -18,6 +18,8 @@
   </head>
   <body>
     <div id="app">
+      <Dashboard></Dashboard>
+
       <div class="sidebar">
         <div class="header">
           <img
@@ -34,7 +36,9 @@
           >
             Log In
           </button>-->
-          <button class="logic" @click="handleLogout">Log Out</button>
+          <button class="logic" @click="handleLogout">
+            <img id="logoutbutton" src="images/logout.png" alt="Button Image" />
+          </button>
         </div>
 
         <div>
