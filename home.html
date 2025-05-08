@@ -36,25 +36,11 @@
           >
             Log In
           </button>-->
-          <button class="logic" @click="handleLogout">
-            <img id="logoutbutton" src="images/logout.png" alt="Button Image" />
-          </button>
+      
         </div>
 
-        <div>
-          <h2>My Profile</h2>
-          <button @click="startProfileEdit" class="logic">Edit Profile</button>
-          <div v-if="profile.icon" class="profile-display">
-            <img :src="profile.icon" class="profile-pic" alt="Profile Pic" />
-            <div class="profile-info">
-              <strong>{{ profile.name }}</strong><br />
-              <span>{{ profile.pronouns }}</span>
-            </div>
-          </div>
-          <div class="profile-bio" v-if="profile.bio">
-            <p><strong>Bio:</strong> {{ profile.bio }}</p>
-          </div>
-        </div>
+        
+        
 
         <!-- Profile Edit Panel -->
         <div v-if="showProfileEditor" class="profile-panel">
