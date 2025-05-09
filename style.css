@@ -744,3 +744,83 @@ textarea, .editText, .newGroupChat, input[type="text"] {
 .profile-panel {
   margin-top: 20px;
 }
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+/* Only affects map page */
+#mapApp {
+  display: flex;
+  width: 100%;
+  max-width: 1600px;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+#mapApp Dashboard {
+  width: 64px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+#mapApp .map-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#mapApp #map {
+  flex-grow: 1;
+  height: 70vh;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#mapApp .bottom-panel {
+  margin-top: 20px;
+  background-color: #005c73;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+#mapApp .menu-item {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mapApp .menu-item:hover {
+  opacity: 0.8;
+}

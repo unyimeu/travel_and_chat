@@ -11,6 +11,9 @@ createApp({
     openChats() {
       window.location.href = "home.html";
     },
+    openMap() {
+      window.location.href = "map.html";
+    },
   },
 })
   .use(GraffitiPlugin, { graffiti })

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Map View | DesignFTW</title>
+
+  <!-- Vue + Graffiti -->
+  <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
+      "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
+      "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
+    }
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div id="mapApp">
+    <Dashboard>
+      
+    </Dashboard>
+
+    <div class="map-column">
+      <div id="map"></div>
+
+      <div class="bottom-panel">
+        <button class="menu-item"><span class="label">Directions</span></button>
+        <button class="menu-item"><span class="label">Location</span></button>
+        <button class="menu-item"><span class="label">Photo</span></button>
+        <button class="menu-item"><span class="label">Status</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script type="module" src="map.js"></script>
+</body>
+</html>

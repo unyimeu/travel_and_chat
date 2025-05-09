@@ -44,10 +44,9 @@ export default {
           </button>
         </div>
   
-        <!-- Navigation Buttons -->
         <div class="sidebar-buttons">
           <button class="icon-button"><span>🕒</span> 7:00 pm</button>
-          <button class="icon-button"><span>📍</span> Tokyo, JP</button>
+          <button class="icon-button" @click="openMap"><span>📍</span> Tokyo, JP</button>
           <button class="icon-button"><span>✔️</span> Status: ON</button>
           <button class="icon-button"><span>🔕</span> Notifications 0</button>
           <button class="icon-button"><span>👤</span> Friends 0</button>
@@ -74,7 +73,7 @@ export default {
         bio: "",
         icon: "",
       },
-      profileDraft: {}, // ✅ ensures saving updates live profile
+      profileDraft: {},
       showProfileEditor: false,
     };
   },
@@ -99,8 +98,6 @@ export default {
         value: newProfile,
         channels: ["designftw-2025-studio2", session.actor],
       };
-
-      // ✅ update visible profile before save
       this.profile = { ...this.profileDraft };
 
       await this.$graffiti.put(profileObject, session);
@@ -113,6 +110,9 @@ export default {
     },
     async backButton() {
       window.location.href = "intermediate.html";
+    },
+    async openMap() {
+      window.location.href = "map.html";
     },
   },
 };
