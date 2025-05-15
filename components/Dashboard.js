@@ -49,7 +49,7 @@ export default {
           <button class="icon-button" @click="openMap"><span>📍</span> Tokyo, JP</button>
           <button class="icon-button" @click="openFriends"><span>✔️</span> Status: ON</button>
           <button class="icon-button"><span>🔕</span> Notifications 0</button>
-          <button class="icon-button"><span>👤</span> Friends 0</button>
+          <button class="icon-button" @click="openFriends"><span>👤</span> Friends 3</button>
           <button class="icon-button"><span>⚙️</span> Settings</button>
         </div>
   
