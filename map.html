@@ -1,45 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Map View | DesignFTW</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map View | DesignFTW</title>
 
-  <!-- Vue + Graffiti -->
-  <script type="importmap">
-  {
-    "imports": {
-      "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
-      "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
-      "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
-    }
-  }
-  </script>
+    <!-- Vue + Graffiti -->
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
+          "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
+          "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
+        }
+      }
+    </script>
+    <script type="module">
+      import "@graffiti-garden/implementation-local";
+    </script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-</head>
-<body>
-  <div id="mapApp">
-    <Dashboard>
-      
-    </Dashboard>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #statusPopup {
+        position: absolute;
+        top: 80px;
+        right: 100px;
+        background: #fff;
+        padding: 20px 24px;
+        border: 2px solid #888;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        display: none;
+        z-index: 999;
+        font-size: 20px;
+        min-width: 220px;
+        line-height: 2;
+      }
+    </style>
+    <script>
+      function toggleStatusPopup() {
+        const popup = document.getElementById("statusPopup");
+        popup.style.display = popup.style.display === "none" ? "block" : "none";
+      }
+      window.addEventListener("click", (e) => {
+        const popup = document.getElementById("statusPopup");
+        const statusBtn = document.getElementById("statusButton");
+        if (
+          popup &&
+          statusBtn &&
+          !popup.contains(e.target) &&
+          !statusBtn.contains(e.target)
+        ) {
+          popup.style.display = "none";
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="mapApp">
+      <Dashboard></Dashboard>
 
-    <div class="map-column">
-      <div id="map"></div>
+      <div class="map-column">
+        <div id="map"></div>
 
-      <div class="bottom-panel">
-        <button class="menu-item"><span class="label">Directions</span></button>
-        <button class="menu-item"><span class="label">Location</span></button>
-        <button class="menu-item"><span class="label">Photo</span></button>
-        <button class="menu-item"><span class="label">Status</span></button>
+        <div class="bottom-panel">
+          <button class="menu-item">
+            <span class="label">➡️ Directions</span>
+          </button>
+          <button class="menu-item">
+            <span class="label">👥 On Map 3</span>
+          </button>
+          <button
+            class="menu-item"
+            id="statusButton"
+            onclick="toggleStatusPopup()"
+          >
+            <span class="label">✔️ Status</span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script type="module" src="map.js"></script>
-</body>
+    <div id="statusPopup">
+      <div style="color: green">Alvin: online</div>
+      <div style="color: green">Sarah: online</div>
+      <div style="color: gray">John: offline</div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="map.js"></script>
+  </body>
 </html>

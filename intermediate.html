@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Choose an Action | DesignFTW</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose an Action | DesignFTW</title>
 
-  <!-- you already have this importmap to load Vue, GraffitiLocal & wrapper-vue -->
-  <script type="importmap">
-  {
-    "imports": {
-      "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
-      "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
-      "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
-    }
-  }
-  </script>
+    <!-- you already have this importmap to load Vue, GraffitiLocal & wrapper-vue -->
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
+          "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
+          "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
+        }
+      }
+    </script>
 
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <div id="intermediateApp">
-    <Dashboard>
-
-      
-
-    </Dashboard>
-    <div class="menu-card">
-      <h2>Start Exploring</h2>
-      <div class="menu-list">
-        <button class="menu-item" @click="openChats">
-          <span class="icon">💬</span>
-          <span class="label">Open Chats</span>
-        </button>
-        <button class="menu-item"  @click="openMap">
-          <span class="icon">🗺️</span>
-          <span class="label">Open Maps</span>
-        </button>
-        <button class="menu-item">
-          <span class="icon">😊</span>
-          <span class="label">Friends</span>
-        </button>
-        <button class="menu-item">
-          <span class="icon">🔍</span>
-          <span class="label">Discover</span>
-        </button>
-        <button class="menu-item">
-          <span class="icon">👥</span>
-          <span class="label">Groups</span>
-        </button>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="intermediateApp">
+      <Dashboard> </Dashboard>
+      <div class="menu-card">
+        <h2>Start Exploring</h2>
+        <div class="menu-list">
+          <button class="menu-item" @click="openChats">
+            <span class="icon">💬</span>
+            <span class="label">Open Chats</span>
+          </button>
+          <button class="menu-item" @click="openMap">
+            <span class="icon">🗺️</span>
+            <span class="label">Open Maps</span>
+          </button>
+          <button class="menu-item" @click="openFriends">
+            <span class="icon">😊</span>
+            <span class="label">Make Friends</span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- unchanged -->
-  <script type="module" src="intermediate.js"></script>
-</body>
+    <!-- unchanged -->
+    <script type="module" src="intermediate.js"></script>
+  </body>
 </html>

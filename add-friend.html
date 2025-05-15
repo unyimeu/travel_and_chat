@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Friend</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js",
+          "@graffiti-garden/implementation-local": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-local@0.6.4/dist/browser/index.js",
+          "@graffiti-garden/implementation-remote": "https://cdn.jsdelivr.net/npm/@graffiti-garden/implementation-remote@0.6.2/dist/browser/index.js",
+          "@graffiti-garden/wrapper-vue": "https://cdn.jsdelivr.net/npm/@graffiti-garden/wrapper-vue@0.7.2/dist/browser/plugin.mjs"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="add-friend.js"></script>
+    <style>
+      /* Scoped Add Friend Layout */
+      #addFriendApp {
+        display: flex;
+        flex-direction: row;
+        min-height: 100vh;
+        background-color: #e6e6e6;
+        width: 100%;
+      }
+
+      button {
+        background-color: #1e1e1e;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      .add-friend-panel h2 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+      }
+
+      .add-friend-panel p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="addFriendApp">
+      <Dashboard></Dashboard>
+
+      <div class="add-friend-panel">
+        <add-friend></add-friend>
+
+        <!-- Required for profile name lookup -->
+        <graffiti-discover
+          ref="profileDiscover"
+          :channels="['designftw-2025-studio2']"
+          :schema="{
+            properties: {
+              value: {
+                properties: {
+                  name: { type: 'string' },
+                  describes: { type: 'string' }
+                }
+              }
+            }
+          }"
+        />
+      </div>
+    </div>
+  </body>
+</html>

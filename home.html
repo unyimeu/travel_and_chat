@@ -21,6 +21,7 @@
       <Dashboard></Dashboard>
 
       <div class="sidebar">
+        
         <div class="header">
           <img
             src="images/ChatGPT_Image_Apr_30__2025__08_01_11_PM-removebg-preview.png"
@@ -36,13 +37,8 @@
           >
             Log In
           </button>-->
-      
         </div>
 
-        
-        
-
-        <!-- Profile Edit Panel -->
         <div v-if="showProfileEditor" class="profile-panel">
           <label>Name:</label>
           <input v-model="profile.name" type="text" placeholder="e.g., Alex" />
@@ -134,6 +130,24 @@
             </li>
           </ul>
         </graffiti-discover>
+        <graffiti-discover
+          ref="friendsDiscover"
+          :channels="[$graffitiSession?.value?.actor, 'friendships']"
+          :schema="{
+    properties: {
+      value: {
+        type: 'object',
+        properties: {
+          type: { const: 'Friendship' },
+          user: { type: 'string' },
+          friend: { type: 'string' }
+        },
+        required: ['type', 'user', 'friend']
+      }
+    }
+  }"
+        />
+        
       </div>
 
       <!-- Chat Area -->

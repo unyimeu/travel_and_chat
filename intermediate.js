@@ -3,8 +3,6 @@ import { GraffitiLocal } from "@graffiti-garden/implementation-local";
 import { GraffitiPlugin } from "@graffiti-garden/wrapper-vue";
 import Dashboard from "./components/Dashboard.js";
 
-
-
 const graffiti = new GraffitiLocal();
 createApp({
   methods: {
@@ -13,6 +11,12 @@ createApp({
     },
     openMap() {
       window.location.href = "map.html";
+    },
+    openFriends() {
+      window.location.href = "add-friend.html";
+    },
+    openGroups() {
+      window.location.href = "groups.html";
     },
   },
 })

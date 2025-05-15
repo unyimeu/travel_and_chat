@@ -11,7 +11,7 @@ export default {
         <!-- Profile Picture and Info -->
         <div class="profile-section">
           <img 
-            :src="profile.icon || 'images/blankprofile.png'" 
+            :src="profile.icon || 'components/images/blankprofile.png'" 
             class="profile-pic" 
             alt="Profile Picture" 
           />
@@ -47,7 +47,7 @@ export default {
         <div class="sidebar-buttons">
           <button class="icon-button"><span>🕒</span> 7:00 pm</button>
           <button class="icon-button" @click="openMap"><span>📍</span> Tokyo, JP</button>
-          <button class="icon-button"><span>✔️</span> Status: ON</button>
+          <button class="icon-button" @click="openFriends"><span>✔️</span> Status: ON</button>
           <button class="icon-button"><span>🔕</span> Notifications 0</button>
           <button class="icon-button"><span>👤</span> Friends 0</button>
           <button class="icon-button"><span>⚙️</span> Settings</button>
@@ -113,6 +113,9 @@ export default {
     },
     async openMap() {
       window.location.href = "map.html";
+    },
+    async openFriends() {
+      window.location.href = "add-friend.html";
     },
   },
 };
